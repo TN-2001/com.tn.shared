@@ -16,3 +16,7 @@ Plugins > Tools
 - [UniTask](https://github.com/Cysharp/UniTask)
 - [DOTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
 - [NaughtyAttributes](https://assetstore.unity.com/packages/tools/utilities/naughtyattributes-129996)
+
+## 環境構築
+
+git submodule add https://github.com/TN-2001/com.tn.shared.git SharedPackages/com.tn.shared
