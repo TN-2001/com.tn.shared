@@ -18,11 +18,14 @@ namespace Library.Input
 
             try
             {
-                inputAction = InputSystem.actions[actionName];
+                if (actionName != "")
+                {
+                    inputAction = InputSystem.actions[actionName];
+                }
             }
             catch
             {
-                Debug.LogError($"Input action '{actionName}' not found in the Input System.");
+                Debug.Log($"Input action '{actionName}' not found in the Input System.");
             }
         }
 
