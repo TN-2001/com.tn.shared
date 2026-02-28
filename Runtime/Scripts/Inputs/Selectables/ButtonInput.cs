@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,7 +7,6 @@ namespace Library.Input
     [RequireComponent(typeof(Button))]
     public class ButtonInput : MonoBehaviour
     {
-        [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private string actionName;
 
         private Button button;
@@ -17,9 +15,14 @@ namespace Library.Input
         private void Awake()
         {
             button = GetComponent<Button>();
-            if (inputActionAsset != null)
+
+            try
             {
-                inputAction = inputActionAsset.FindAction(actionName);
+                inputAction = InputSystem.actions[actionName];
+            }
+            catch
+            {
+                Debug.LogError($"Input action '{actionName}' not found in the Input System.");
             }
         }
 
